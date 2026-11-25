@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pasaporte de producto · Allora Labs</title><meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--bg:#f5f7fb;--ink:#14233a;--muted:#4a5568;--line:#dde4ee;--blue:#1f6fd1;--blue-soft:#e8f1fc;--navy:#14233a;--ok:#2f7d4f;--warn:#b7791f;--bad:#b8402f}
+*{box-sizing:border-box}body{margin:0;font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.45}
+main{max-width:460px;margin:0 auto;padding:16px 16px 28px}
+.demo{background:var(--blue);color:#fff;text-align:center;font-size:12px;font-weight:600;letter-spacing:.06em;padding:5px;border-radius:10px;margin-bottom:12px}
+.top{display:flex;align-items:center;justify-content:space-between;padding:4px 2px 14px}.top img{height:36px;display:block}
+.kick{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);text-align:right}
+.hero{background:var(--navy);color:#fff;border-radius:18px;padding:22px 22px 20px}.hero .kick{text-align:left;color:#7fb3ff;margin-bottom:8px}
+.prod{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;line-height:1.15;margin:0}.sub{color:#c9d6ea;font-size:13px;margin-top:4px}
+.stat{display:flex;gap:12px;align-items:center;margin-top:18px;padding:12px 14px;border-radius:14px;background:#fff}
+.stat b{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px}.stat span{font-size:12.5px;color:var(--muted)}
+.big{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;flex:none}.big svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.stat.ok b{color:var(--ok)}.stat.ok .big{background:var(--ok)}.stat.bad b{color:var(--bad)}.stat.bad .big{background:var(--bad)}.stat.wait b{color:var(--warn)}.stat.wait .big{background:var(--warn)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin-top:12px}.h{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:16px;margin:0 0 8px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:14px;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}
+.row span{color:var(--muted)}.row b{text-align:right;font-weight:600}.row b.g{color:var(--ok)}.row small{color:var(--muted);font-weight:400;display:block;font-size:12px}
+.t{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;font-size:14px;padding:6px 0}.t i{width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}.t span{color:var(--muted)}.t b{font-weight:600}
+.lab{display:flex;gap:12px;align-items:center;font-size:12.5px;color:var(--muted)}.lab .ic{width:38px;height:38px;border-radius:10px;background:var(--blue-soft);display:grid;place-items:center;flex:none}
+.lab .ic svg,.docs .di svg{width:18px;height:18px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.lab b{color:var(--ink);font-weight:600;display:block;font-size:13.5px}
+.docs a{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:14px}.docs a:last-child{border-bottom:0}.docs a:hover b{color:var(--blue)}.docs .di{width:34px;height:34px;border-radius:9px;background:var(--blue-soft);display:grid;place-items:center;flex:none}.docs b{display:block;font-weight:600}.docs small{color:var(--muted)}.hint{font-size:12px;color:var(--muted);margin-top:8px}
+.msg{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--muted);margin-top:40px}.msg b{display:block;color:var(--ink);font-family:'Space Grotesk',sans-serif;font-size:18px;margin-bottom:4px}
+.msg a{color:var(--blue)}
+</style></head><body><main id="m"><div class="msg">Cargando pasaporte…</div></main>
+<script>
+var API='', LOGO="data:image/png;base64,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";
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function nf(n,d){if(d===undefined)d=1;if(n===null||n===undefined||n===''||isNaN(n))return '–';return Number(n).toFixed(d).replace('.',',');}
+function dmy(s){return s?s.slice(8,10)+'-'+s.slice(5,7)+'-'+s.slice(0,4):'–';}
+var DOC='<svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>';
+function urlInforme(P,x,tipo,ref,nombre){
+  if(!x||!x.informe) return ''; if(x.enlace) return x.enlace; if(!P.demo) return '';
+  var D={demo:true,informe:x.informe,tipo:tipo,ref:ref,nombre:nombre,fecha:x.fecha||x.fechaDictamen,fechaDictamen:x.fechaDictamen,cbd:x.cbd,thc:x.thc,otros:x.otros||'',dictamen:x.dictamen||'Conforme',estandar:x.estandar||'',tomados:x.tomados||'',requeridos:x.requeridos||'',thcMax:P.thcMax};
+  return 'informe.html#d='+btoa(unescape(encodeURIComponent(JSON.stringify(D))));
+}
+function render(P){
+  var m=P.m, ok=P.estado==='Liberado', rech=P.estado==='Rechazado';
+  var stat= ok?'<div class="stat ok"><div class="big"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><b>Lote analizado y liberado</b><span>CBD y THC verificados por Allora Labs</span></div></div>'
+    : rech?'<div class="stat bad"><div class="big"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div><div><b>Lote no liberado</b><span>Este lote no debe venderse</span></div></div>'
+    : '<div class="stat wait"><div class="big"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div><div><b>En control</b><span>Este lote aún no está liberado</span></div></div>';
+  var row=function(a,b,g){return '<div class="row"><span>'+a+'</span><b'+(g?' class="g"':'')+'>'+b+'</b></div>';};
+  var res=row('CBD (medido)',m?nf(m.cbd)+' %'+(P.producto_cbd?' <small>declarado '+nf(P.producto_cbd)+' %</small>':''):'–')+row('THC total (medido)',m?nf(m.thc,2)+' %':'–',m&&ok)+row('Materia prima',P.mp.map(function(x){return esc(x.tipo)+(x.descripcion?' · '+esc(x.descripcion):'');}).join('<br>')||'–')+row('Materia prima analizada',P.mp.length&&P.mp.every(function(x){return x.informe;})?'Sí, cada lote':'–',P.mp.length&&P.mp.every(function(x){return x.informe;}));
+  var cad=[['Materia prima recibida',P.mp.map(function(x){return dmy(x.fecha);}).join(', ')],['Materia prima analizada',P.mp.map(function(x){return dmy(x.fechaDictamen);}).join(', ')],['Producido',dmy(P.fecha)],['Producto analizado',m?dmy(m.fechaDictamen):'–']];
+  var docs=[]; P.mp.forEach(function(x){ var u=urlInforme(P,x,'Materia prima',x.id,x.tipo+(x.descripcion?' · '+x.descripcion:'')); if(u) docs.push([u,'Análisis de la materia prima',esc(x.tipo),x.informe]); });
+  if(m){ var u=urlInforme(P,m,'Producto terminado',P.lote,P.producto); if(u) docs.push([u,'Análisis del producto','CBD y THC del lote',m.informe]); }
+  var inf=P.mp.map(function(x){return x.informe;}).concat([m&&m.informe]).filter(Boolean).map(esc).join(', ')||'–';
+  document.getElementById('m').innerHTML=(P.demo?'<div class="demo">DEMO · DATOS DE EJEMPLO</div>':'')+
+   '<div class="top"><img src="'+LOGO+'" alt="Allora Labs"><div class="kick">Pasaporte de producto</div></div>'+
+   '<div class="hero"><div class="kick">Trazabilidad por Allora Labs</div><h1 class="prod">'+esc(P.producto)+'</h1><div class="sub">Lote '+esc(P.lote)+' · producido '+dmy(P.fecha)+'</div>'+stat+'</div>'+
+   '<div class="card"><h2 class="h">Resultados</h2>'+res+'</div>'+
+   '<div class="card"><h2 class="h">Cadena</h2>'+cad.map(function(k){return '<div class="t"><i></i><span>'+k[0]+'</span><b>'+k[1]+'</b></div>';}).join('')+'</div>'+
+   (docs.length?'<div class="card docs"><h2 class="h">Informes de análisis</h2>'+docs.map(function(x){return '<a href="'+esc(x[0])+'" target="_blank" rel="noopener"><span class="di">'+DOC+'</span><span><b>'+x[1]+'</b><small>'+x[2]+' · '+esc(x[3])+'</small></span></a>';}).join('')+(P.demo?'<div class="hint">Informes de ejemplo. En uso, aquí se abre el PDF original de Allora Labs.</div>':'')+'</div>':'')+
+   '<div class="card lab"><div class="ic"><svg viewBox="0 0 24 24"><path d="M9 3h6"/><path d="M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg></div><div><b>Análisis por Allora Labs · ISO 9001</b>Informes '+inf+'</div></div>';
+}
+function fallo(t){document.getElementById('m').innerHTML='<div class="msg"><b>Pasaporte no encontrado</b>'+t+'</div>';}
+var Q=new URLSearchParams(location.search), code=(Q.get('p')||'').replace(/[^A-Za-z0-9]/g,''), KC=(Q.get('k')||'').replace(/[^A-Za-z0-9-]/g,'').toLowerCase();
+function cargar(){ fetch(API+'?api=pasaporte&p='+code,{credentials:'omit',redirect:'follow'}).then(function(r){return r.json();}).then(function(P){if(P.error)fallo(esc(P.error));else render(P);}).catch(function(){fallo('Sin conexión. Inténtalo de nuevo.');}); }
+if(!code) fallo('Escanea el código QR del envase para ver el pasaporte de este producto.<br><br><a href="app/'+(KC?'?k='+esc(KC):'')+'">Acceso para empresas</a>');
+else fetch((window.__CLIENTES_URL||'clientes.json'),{cache:'no-store'}).then(function(r){return r.json();}).then(function(all){ var c=all[KC||'demo']; if(!c) return fallo('Este enlace no pertenece a ningún fabricante conocido.'); API=c.api; cargar(); }).catch(function(){ fallo('Sin conexión. Inténtalo de nuevo.'); });
+</script></body></html>
