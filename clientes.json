@@ -1,7 +1,7 @@
 {
   "_explicacion": "Registro de clientes: código del enlace (?k=CÓDIGO) -> URL del servidor (Apps Script /exec) y opciones. Sin código se abre la demo.",
   "demo": {
-    "api": "https://script.google.com/macros/s/AKfycbzuOL-gMid0BVZVkXZHRojABqblzdo7PCWM7zAS0JOxSP9TdwTk6D1iHxq4RqAJ_4nkOw/exec",
+    "api": "https://script.google.com/macros/s/AKfycbyLZJm4yjVGP0rXXMd-hzDYdzAeh8QpELTQ2oUx_8PPzGGn-HefdJbCwl8HexXD36TG/exec",
     "opciones": {}
   }
 }
